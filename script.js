@@ -152,12 +152,12 @@ $(document).ready( function () {
                                              "top": positionTop + "px",
                                               "left": "1100px"});
         spanImg.insertAfter(this);
+        $("img").mouseout( function () {
+          spanImg.css("display", "none");
+        });
       }
     }
-    $("img").mouseout( function () {
-      spanImg.css("display", "none");
     });
-  });
 
 	$("#home").click( function () {
 		$("main").toggle("swing");
@@ -184,13 +184,15 @@ $(document).ready( function () {
 	});
 
 	$("#btn").click( function () {
-		$(".contact").toggle().css({"display" : "block",
-                                "top" : "0",
-                                "left" : "0",
-                                "right" : "0",
-                                "bottom" : "0",
-                                "background-color" : "rgba(0,0,0,0.6)",
-                                "position" : "absolute"});
+    $(".contact").dialog()
+
+		// $(".contact").toggle().css({"display" : "block",
+    //                             "top" : "0",
+    //                             "left" : "0",
+    //                             "right" : "0",
+    //                             "bottom" : "0",
+    //                             "background-color" : "rgba(0,0,0,0.6)",
+    //                             "position" : "absolute"});
 
 		$(document).keyup( function (event) {
 			if (event.keyCode === 27)

@@ -98,14 +98,13 @@ $(document).ready( function () {
   }());
 
   $("div:first div span").click( function () {
-    $(this).css("background-color", "#000");
-    id = parseInt($(this).attr('id'));
-    $("div:first div span").each( function () {
-      if ($(this).attr("id") != id)
-        $(this).css("background-color", "#fff");
-      changeImages(id);
-
-    });
+        $(this).css("background-color", "#000");
+        id = parseInt($(this).attr('id'));
+        $("div:first div span").each( function () {
+          if ($(this).attr("id") != id)
+            $(this).css("background-color", "#fff");
+          changeImages(id);
+      });
   });
 
   function changeImages (id){
@@ -120,8 +119,8 @@ $(document).ready( function () {
       }
       if (i != nextId && i != previousId && i != id)
         images[i].changeClass(images[i]['alt'], "inactive");
+      }
     }
-  }
 
 //   setInterval( function () {
 //     id++;

@@ -792,13 +792,16 @@
   height: 200px;
   position: absolute;
   clip: rect(0px,400px,400px,0px);
+  animation: right 5s;
 }
+
 .right{
   left: 1445px;
   width: 20%;
   height: 200px;
   position: absolute;
   clip: rect(0px,400px,400px,0px);
+  animation: left 5s;
 }
 .active{
   margin-left: 534px;
@@ -806,4 +809,20 @@
   position: relative;
   width: 44%;
   height: 200px;
+}
+@keyframes left {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes right {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }

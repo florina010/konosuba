@@ -70,6 +70,8 @@ $(document).ready( function () {
         images.push(new Image(image.src, image.alt, image.cls));
       });
   (function setup(){
+    $(divFH).css({"background-color" : "#fff", "color":"#e600ac"});
+    $("main").toggle();
     var ul = $("<ul></ul>");
     $("#tabs").prepend(ul);
     tab1.add(ul, tab1.name, tab1.src);
@@ -88,17 +90,16 @@ $(document).ready( function () {
       $(divS).append(divSpan);
       if (i == 0)
         span.css("background-color", "#000");
+
       else
         span.css("background-color", "#fff");
     }
     id = 0;
-    console.log(id);
   }());
 
   $("div:first div span").click( function () {
     $(this).css("background-color", "#000");
     id = parseInt($(this).attr('id'));
-    console.log(id);
     $("div:first div span").each( function () {
       if ($(this).attr("id") != id)
         $(this).css("background-color", "#fff");
@@ -113,9 +114,9 @@ $(document).ready( function () {
     previousId = id === 0 ? images.length - 1 : id - 1;
     for (var i = 0; i < images.length; i++) {
       if (i === id) {
-        images[i].changeClass(images[i]['alt'], 'active');
         images[nextId].changeClass(images[nextId]['alt'], 'right');
         images[previousId].changeClass(images[previousId]['alt'], 'left');
+        images[i].changeClass(images[i]['alt'], 'active');
       }
       if (i != nextId && i != previousId && i != id)
         images[i].changeClass(images[i]['alt'], "inactive");
@@ -158,6 +159,24 @@ $(document).ready( function () {
     }
   });
 
+  $("#btn").click( function () {
+    $("#contact").dialog({
+      width: "100%",
+      modal: true,
+    });
+    $(document).keyup( function (event) {
+      if (event.keyCode === 27)
+        $("#contact").hide();
+    });
+
+    $("#contact").on('click', function (e) {
+      if (e.target !== this)
+        return;
+      $(this).slideUp();
+    });
+
+  });
+
   $("#home").click( function () {
     $("main").toggle("swing");
 		$(divFH).css({"background-color" : "#fff", "color":"#e600ac"});
@@ -181,30 +200,6 @@ $(document).ready( function () {
     text.css({"background-color" : "#fff", "color" : "#e600ac"});
     $(divFA).after(text);
 	});
-
-	$("#btn").click( function () {
-    $(".contact").dialog()
-    $(".contact").resizable();
-
-		// $(".contact").toggle().css({"display" : "block",
-    //                             "top" : "0",
-    //                             "left" : "0",
-    //                             "right" : "0",
-    //                             "bottom" : "0",
-    //                             "background-color" : "rgba(0,0,0,0.6)",
-    //                             "position" : "absolute"});
-
-		$(document).keyup( function (event) {
-			if (event.keyCode === 27)
-				$(".contact").hide();
-    });
-
-    $(".contact").on('click', function (e) {
-      if (e.target !== this)
-        return;
-      $(this).slideUp();
-    });
-  });
 
 	$( function () {
 		$("#tabs").tabs({

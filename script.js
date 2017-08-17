@@ -102,7 +102,6 @@ $(document).ready( function () {
     $("div:first div span").each( function () {
       if ($(this).attr("id") != id)
         $(this).css("background-color", "#fff");
-      $("div:first img").addClass('animation');
       changeImages(id);
 
     });
@@ -157,10 +156,10 @@ $(document).ready( function () {
         });
       }
     }
-    });
+  });
 
-	$("#home").click( function () {
-		$("main").toggle("swing");
+  $("#home").click( function () {
+    $("main").toggle("swing");
 		$(divFH).css({"background-color" : "#fff", "color":"#e600ac"});
 		$(divFA).css({"background-color" : "#b9b9b9", "color" : "#575757"});
     $("[for=about] #appended").each( function () {
@@ -185,6 +184,7 @@ $(document).ready( function () {
 
 	$("#btn").click( function () {
     $(".contact").dialog()
+    $(".contact").resizable();
 
 		// $(".contact").toggle().css({"display" : "block",
     //                             "top" : "0",
@@ -230,7 +230,7 @@ $(document).ready( function () {
             $("#text p").css("margin-left", "180px");
             $(last).css("margin-left" , "179px");
           }
-    }
-  });
-});
+        }
+      });
+    });
 });

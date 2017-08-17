@@ -11,7 +11,7 @@ Tab.prototype.add = function (ul, text, href) {
 }
 
 function Image (src, alt, cls) {
-  this.src = src; 
+  this.src = src;
   this.alt = alt;
   this.cls = cls;
 }
@@ -38,7 +38,7 @@ $(document).ready( function () {
       second = $("#text div:nth-child(2)"),
       tab1 = new Tab ("Img 1", "#img1"),
       tab2 = new Tab ("Img 2", "#img2"),
-      id = 0, 
+      id = 0,
       spanImg,
       imagesDates = [{
           src: 'https://teenalmyers.files.wordpress.com/2012/05/wheat-header.jpg',
@@ -104,7 +104,7 @@ $(document).ready( function () {
         $(this).css("background-color", "#fff");
       $("div:first img").addClass('animation');
       changeImages(id);
-      
+
     });
   });
 
@@ -122,7 +122,7 @@ $(document).ready( function () {
         images[i].changeClass(images[i]['alt'], "inactive");
     }
   }
-  
+
 //   setInterval( function () {
 //     id++;
 //     if (id >= images.length)
@@ -136,7 +136,7 @@ $(document).ready( function () {
 //         divs[i].style.backgroundColor = "#000";
 
 //   },2000);
-  
+
   $("img").mouseover( function () {
     if ( $(this).attr("class") == "active"){
       var imageCaption = $(this).attr("alt");
@@ -158,7 +158,7 @@ $(document).ready( function () {
       spanImg.css("display", "none");
     });
   });
-  
+
 	$("#home").click( function () {
 		$("main").toggle("swing");
 		$(divFH).css({"background-color" : "#fff", "color":"#e600ac"});
@@ -172,11 +172,11 @@ $(document).ready( function () {
     $(divFA).css({"background-color" : "#fff", "color" : "#e600ac"});
 		$("main").css("display", "none");
 		$(divFH).css({"background-color" : "#b9b9b9", "color" : "#575757"});
-    
+
     $("[for=about] div #appended").each( function () {
       $(this).css("display", "block");
     });
-    
+
     var text = $("<div>Appended Text</div>");
     text.attr("id", "appended");
     text.css({"background-color" : "#fff", "color" : "#e600ac"});
@@ -191,12 +191,12 @@ $(document).ready( function () {
                                 "bottom" : "0",
                                 "background-color" : "rgba(0,0,0,0.6)",
                                 "position" : "absolute"});
-    
+
 		$(document).keyup( function (event) {
 			if (event.keyCode === 27)
 				$(".contact").hide();
     });
-    
+
     $(".contact").on('click', function (e) {
       if (e.target !== this)
         return;
@@ -228,7 +228,7 @@ $(document).ready( function () {
             $("#text p").css("margin-left", "180px");
             $(last).css("margin-left" , "179px");
           }
-        }
-      });
+    }
   });
+});
 });

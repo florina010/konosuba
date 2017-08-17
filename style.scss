@@ -792,7 +792,7 @@
   height: 200px;
   position: absolute;
   clip: rect(0px,400px,400px,0px);
-  animation: right 5s;
+  animation: right 3s;
 }
 
 .right{
@@ -809,6 +809,7 @@
   position: relative;
   width: 44%;
   height: 200px;
+  animation: active 1s;
 }
 @keyframes left {
   from{
@@ -825,4 +826,13 @@
   to{
     opacity: 1;
   }
+}
+@keyframes active {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+
 }
